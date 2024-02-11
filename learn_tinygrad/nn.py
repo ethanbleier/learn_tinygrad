@@ -15,11 +15,15 @@ class Net:
 
 net = Net()
 optim = nn.optim.SGD(nn.state.get_parameters(net), lr=0.001)
+
+# I diverged from the video at this step because it was outdated (only by a month!)
 X = tensor.Tensor([0, 0, 0, 1, 1, 0, 1, 1]).reshape(4, 2)
 y = tensor.Tensor([1, 0, 0, 1]).reshape(4, 1)
 
 print(net(X).numpy())
 
+# obviously suboptimal efficiently...
+# range(200) for fast
 for i in tqdm.tqdm(range(2000)):
 	for j in range(4):
 		y_predicted = net(X[j])
@@ -27,4 +31,5 @@ for i in tqdm.tqdm(range(2000)):
 		loss.backward()
 		optim.step()
 
+# outputs should resemble 1, 0, 0 1
 print(net(X).numpy())
