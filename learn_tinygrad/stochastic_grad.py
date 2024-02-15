@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # https://chat.openai.com/share/f7806681-bdc3-44d2-81fb-d7b7dbe77d6b
 # https://arxiv.org/pdf/1709.07615.pdf
 # Ethan Bleier
